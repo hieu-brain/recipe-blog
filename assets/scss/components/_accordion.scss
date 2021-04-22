@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+.accordion-item {
+  background-color: $color-white;
+  border: $width-border-form solid $color-border;
+  border-radius: $radius;
+  &.is-active {
+    .accordion-inside {
+      opacity: 1;
+    }
+    .accordion-title:after {
+      transform: rotate(180deg);
+    }
+  }
+  &:nth-child(n+2) {
+    @include max {
+      margin-top: 12px;
+    }
+    @include min {
+      margin-top: $margin-pc;
+    }
+  }
+}
+
+.accordion-title {
+  width: 100%;
+  display: block;
+  position: relative;
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  @include transition-fade;
+  @include max {
+    padding: 12px 30px 12px 20px;
+  }
+  @include min {
+    padding: 22px 40px 22px 40px;
+    font-size: 20px;
+  }
+  &:after {
+    content: '';
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 0;
+    border-color: $color-border transparent transparent transparent;
+    pointer-events: none;
+    @include max {
+      right: 16px;
+      border-width: 9px 7px 0 7px;
+    }
+    @include min {
+      right: 32px;
+      border-width: 14px 10px 0 10px;
+    }
+  }
+}
+
+.accordion-frame {
+  overflow: hidden;
+  height: 0;
+  will-change: height;
+}
+
+.accordion-inside {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  will-change: opacity;
+  background-image: linear-gradient(to right, $color-border, $color-border 4px, transparent 4px, transparent 6px);
+  background-size: 6px $width-border-form;
+  background-position: top;
+  background-repeat: repeat-x;
+  @include max {
+    padding: $padding-sp $padding-sp;
+  }
+  @include min {
+    padding: $padding-pc $padding-pc;
+  }
+  .text {
+    text-align: justify;
+  }
+}

@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+.title {
+  margin-bottom: 12px;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  @include min {
+    margin-bottom: 22px;
+    font-size: 30px;
+  }
+}
+
+.title-page {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  background-color: $color-white;
+  @include mb;
+  @include b($color-gap);
+  @include radius;
+  @include font-en;
+  @include max {
+    height: $height-header-sp;
+    padding: 0 $padding-sp;
+    font-size: 30px;
+  }
+  @include min {
+    height: $height-header-pc;
+    padding: 0 $padding-pc;
+    font-size: 56px;
+  }
+  &-ja {
+    font-weight: 700;
+    @include font-sans;
+    @include max {
+      font-size: 22px;
+    }
+    @include min {
+      font-size: 40px;
+    }
+  }
+}
+
+.title-section {
+  font-weight: 700;
+  line-height: 1.1;
+  display: flex;
+  position: relative;
+  letter-spacing: 0.06em;
+  @include max {
+    margin: (-$padding-sp) (-$padding-sp) $padding-sp;
+    padding: 20px $padding-sp;
+    border-bottom: $width-border-form solid $color-gap;
+    font-size: 16px;
+  }
+  @include min {
+    margin: (-$padding-pc) (-$padding-pc) $padding-pc;
+    padding: 36px $padding-pc;
+    border-bottom: $width-border-form solid $color-gap;
+    font-size: 32px;
+  }
+  + .accordion-list,
+  + .spec {
+    @include max {
+      margin-top: 28px;
+    }
+    @include min {
+      margin-top: 44px;
+    }
+  }
+}
+
+.title-small {
+  font-weight: 700;
+  line-height: 1.4;
+  @include max {
+    margin-bottom: 10px;
+  }
+  @include min {
+    margin-bottom: 18px;
+  }
+  span {
+    display: inline;
+    padding-bottom: 2px;
+    border-bottom: 2px solid $color-border;
+  }
+}
+
+

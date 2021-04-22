@@ -1,0 +1,47 @@
+@charset "utf-8";
+.recipe{
+  &-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.6% 1.6% 0;
+    margin: 0;
+    @include max{
+      padding: 2.4%;
+    }
+    &-item{
+      width: 25%;
+      margin: 0;
+      @include max{
+        padding: 2.4%;
+        width: 50%;
+      }
+      figure{
+        padding: 5.8%;
+        @include max{
+          padding: 0;
+        }
+        a{
+          position: relative;
+          overflow: hidden;
+        }
+      }
+      &__title{
+        font-weight: 700;
+        line-height: 1.1;
+        display: flex;
+        letter-spacing: 0.06em;
+        @include max {
+          font-size: 16px;
+        }
+        @include min {
+          font-size: 26px;
+        }
+      }
+    }
+    img{
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+}

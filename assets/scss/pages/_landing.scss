@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+.landing {
+  position: relative;
+}
+
+.landing-copy {
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-indent: 0.1em;
+  background-color: $color-white;
+  @include mb;
+  @include radius;
+  @include b($color-gap);
+  @include max {
+    padding: $padding-sp;
+    font-size: 24px;
+  }
+  @include min {
+    height: $height-header-pc;
+    display: flex;
+    align-items: center;
+    padding: 0 $padding-pc;
+    font-size: 40px;
+  }
+  span {
+    @include font-en;
+  }
+}
+
+.landing-list {
+  @include max {
+    margin-top: 12px;
+  }
+  @include min {
+    margin-top: 16px;
+  }
+}
+
+.landing-service-list {
+  display: flex;
+  flex-wrap: wrap;
+  @include max {
+    margin: -8px -14px -14px;
+  }
+  @include min {
+    margin: -10px -20px -20px;
+  }
+}
+
+.landing-service-item {
+  @include max {
+    width: 140px;
+    padding: 14px;
+  }
+  @include min {
+    width: 210px;
+    padding: 20px;
+  }
+  a {
+    width: 100%;
+    display: block;
+  }
+}
+
+.landing-service-name {
+  display: block;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  @include font-en;
+  @include max {
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+  @include min {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+}
+
+.landing-service-description {
+  display: block;
+  line-height: 1;
+  white-space: nowrap;
+  color: $color-muted;
+  @include max {
+    font-size: 10px;
+  }
+  @include min {
+    font-size: 14px;
+  }
+}

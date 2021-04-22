@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+.price {
+  display: inline-flex;
+  align-items: flex-end;
+  font-family: sans-serif;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  @include max {
+    font-size: 10px;
+  }
+  @include min {
+    font-size: 12px;
+  }
+  &.mod-large {
+    @include max {
+      font-size: 12px;
+    }
+    @include min {
+      font-size: 14px;
+    }
+    .price-unit {
+      margin: 0 0 2px 6px;
+    }
+  }
+}
+
+.price-number {
+  font-size: 160%;
+}
+
+.price-unit {
+  margin: 0 0 3px 4px;
+}
+
+.price-number {
+  font-size: 160%;
+}
+
+.price-number {
+  font-size: 160%;
+}

@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+body {
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: $color-font;
+  font-feature-settings: "palt";
+  @include font-sans;
+  @include max {
+    line-height: 1.7;
+  }
+  @include min {
+    line-height: 1.9;
+    font-size: 18px;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: 1366px;
+  @include max {
+    padding: 0;
+  }
+  @include min {
+    max-width: $width-max;
+    margin-left: auto;
+    margin-right: auto;
+    padding: $width-border-pc;
+  }
+}
+
+.main {
+  display: flex;
+}
+
+.contents {
+  min-width: 0;
+  flex-grow: 1;
+  position: relative;
+  @include max {
+    min-height: calc(100vh - #{(2 * $width-border-sp)});
+  }
+  @include min {
+    min-height: calc(100vh - #{(2 * $width-border-pc)});
+  }
+}
+
+.sp {
+  @include min {
+    display: none;
+  }
+}
+
+.pc {
+  @include max {
+    display: none;
+  }
+}

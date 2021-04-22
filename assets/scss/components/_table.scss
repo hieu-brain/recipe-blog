@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+.table {
+  width: 100%;
+  display: block;
+  position: relative;
+  tbody {
+    display: block;
+  }
+  tr {
+    width: 100%;
+    position: relative;
+    background-color: $color-white;
+    border: $width-border-form solid $color-border;
+    @include max {
+      display: block;
+      padding: $padding-sp;
+    }
+    @include min {
+      display: flex;
+      align-items: flex-end;
+      padding: 0 16px;
+    }
+    + tr {
+      margin-top: 30px;
+    }
+  }
+  td {
+    @include max {
+      display: block;
+      + td {
+        margin-top: $margin-sp;
+        &.mod-price {
+          margin-top: $margin-sp * 2;
+        }
+      }
+      &.mod-price {
+        display: flex;
+        justify-content: flex-end;
+        .price {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          padding-bottom: 5px;
+        }
+      }
+    }
+    @include min {
+      width: 8.5rem;
+      padding:24px 8px;
+      box-sizing: content-box;
+      &.mod-minimal {
+        width: 5rem;
+      }
+      &.mod-small {
+        width: 7rem;
+      }
+      &.mod-large {
+        width: 11rem;
+      }
+      &.mod-price {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom: 32px;
+      }
+      &.mod-w-33 {
+        width: 33.333%;
+        box-sizing: border-box;
+        &:nth-child(n+4) {
+          padding-top: 0;
+        }
+      }
+    }
+    &:last-child {
+      @include min {
+        min-width: 140px;
+      }
+    }
+    .button-remove {
+      position: absolute;
+      @include max {
+        width: 30px;
+        height: 30px;
+        top: -15px;
+        right: -15px;
+      }
+      @include min {
+        top: -15px;
+        right: -15px;
+      }
+    }
+  }
+  &.mod-grande {
+    @include min {
+      tr {
+        flex-wrap: wrap;
+        padding-right: 240px;
+      }
+      td.mod-price {
+        width: 240px;
+        position: absolute;
+        bottom: 0;
+        right: 26px;
+      }
+    }
+  }
+}
+
+.table-unit {
+  margin-left: 6px;
+}
+
+.table-price {
+  text-align: right;
+}
+
+.table-spec {
+  margin: 30px 0;
+  border-collapse: collapse;
+  td {
+    padding: 8px 12px;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+.spec {
+  border-collapse: collapse;
+  @include max {
+    width: 100%;
+    max-width: 400px;
+    margin: 24px auto;
+  }
+  @include min {
+    margin: 40px 0;
+  }
+  &.mod-mt0 {
+    margin-top: 0;
+  }
+  &.mod-mb0 {
+    margin-bottom: 0;
+  }
+  &.mod-center {
+    th,
+    td {
+      text-align: center;
+    }
+  }
+  thead th {
+    font-weight: 700;
+    text-align: center;
+  }
+  th {
+    text-align: left;
+  }
+  th,
+  td {
+    border-top: $width-border-spec solid $color-black;
+    border-bottom: $width-border-spec solid $color-black;
+    @include max {
+      padding: 10px 6px;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+    }
+    @include min {
+      padding: 12px 8px;
+    }
+  }
+  td {
+    @include min {
+      padding-left: 20px;
+    }
+    &.mod-align-right {
+      text-align: right;
+    }
+  }
+  caption {
+    margin-top: 16px;
+    caption-side: bottom;
+    font-size: 80%;
+    text-align: left;
+    color: $color-muted;
+  }
+}

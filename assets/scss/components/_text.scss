@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.text {
+  text-align: justify;
+}
+
+* + .text {
+  @include max {
+    margin-top: 12px;
+  }
+  @include min {
+    margin-top: 14px;
+  }
+}
+
+.text-link {
+  color: $color-link;
+  text-decoration: underline;
+}
+
+.text-bold {
+  font-weight: bold;
+}
